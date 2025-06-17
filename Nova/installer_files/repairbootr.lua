@@ -1,0 +1,6 @@
+shell.run("rename startup.lua tempstartupfile.lua")
+shell.run("rename startup tempstartupfile")
+shell.run("pastebin get 1WVxBzpT confirm.lua")
+print("if your OS overwrote BootR, click Y on the next dialog.")
+sleep(3)
+shell.run("confirm pastebin run kCG6gXy6")

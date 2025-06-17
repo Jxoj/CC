@@ -1,7 +1,6 @@
--- /startup.lua
-term.clear()
-term.setCursorPos(1,1)
-term.setTextColor(colors.lightGray)
-print("Booting Nova OS…")
+shell.run("clear")
+print("Nova Bootloader")
 sleep(1)
-shell.run("/nova/core.lua")
+print("Starting Bootloader")
+sleep(1)
+shell.run("bootscreen.lua")

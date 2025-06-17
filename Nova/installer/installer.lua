@@ -1,18 +1,27 @@
--- installer.lua
-local root = "https://jxoj.github.io/CC/Nova/installer_files"
-local files = {
-  -- root startup
-  { url = root.."/startup.lua",          path = "/startup.lua" },
-  -- Nova core files
-  { url = root.."/Nova/core.lua",        path = "/nova/core.lua" },
-  { url = root.."/Nova/ui.lua",          path = "/nova/ui.lua"   },
-  { url = root.."/Nova/install.lua",     path = "/nova/install.lua" },
-  { url = root.."/Nova/default_packages/appstore.lua",     path = "/nova/packages/AppStore.lua" },
-}
+-- Auto-generated Nova installer 
+local root = "https://jxoj.github.io/CC/Nova/installer_files" 
+local files = { 
+  { url = root.."/.settings", path = "/.settings" }, 
+  { url = root.."/bootscreen.lua", path = "/bootscreen.lua" }, 
+  { url = root.."/editstartupoptions.lua", path = "/editstartupoptions.lua" }, 
+  { url = root.."/installer.lua", path = "/installer.lua" }, 
+  { url = root.."/nova.lua", path = "/nova.lua" }, 
+  { url = root.."/reboot1.lua", path = "/reboot1.lua" }, 
+  { url = root.."/repairbootr.lua", path = "/repairbootr.lua" }, 
+  { url = root.."/shutdown1.lua", path = "/shutdown1.lua" }, 
+  { url = root.."/startup.lua", path = "/startup.lua" }, 
+  { url = root.."/startupoptions.txt", path = "/startupoptions.txt" }, 
+  { url = root.."/Nova/core.lua", path = "/nova/core.lua" }, 
+  { url = root.."/Nova/desktop.lua", path = "/nova/desktop.lua" }, 
+  { url = root.."/Nbova/install.lua", path = "/nova/install.lua" }, 
+  { url = root.."/Nova/ui.lua", path = "/nova/ui.lua" }, 
+  { url = root.."/Nova/uninstall.lua", path = "/nova/uninstall.lua" }, 
+  { url = root.."/Nova/default_packages/appstore.lua", path = "/nova/packages/AppStore.lua" }, 
+} 
 
 -- ensure HTTP API is available
 if not http then
-  print("Error: HTTP API disabled!")
+  print("Error: HTTP API disabled")
   return
 end
 
@@ -26,7 +35,7 @@ end
 
 -- download a single file
 local function download(f)
-  print("Downloading "..f.url.." → "..f.path)
+  print("Downloading "..f.url.." \226\134\146 "..f.path)
   local res = http.get(f.url)
   if not res then
     print("  FAILED")
@@ -53,5 +62,5 @@ if not fs.exists("/nova/packages") then
   fs.makeDir("/nova/packages")
 end
 
-print("\nInstallation complete!")
+print("\nInstallation complete")
 print("Reboot to start Nova OS:  reboot")

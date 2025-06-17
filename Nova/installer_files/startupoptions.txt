@@ -1,0 +1,27 @@
+ {
+  preload = {},
+  delay = 1.5,
+  menu = {
+    {
+      prompt = "CraftOS 1.9",
+    },
+    {
+      args = {
+        "/editstartupoptions.lua",
+      },
+      prompt = "Edit Boot Options",
+    },
+    {
+      args = {
+        "/reboot1.lua",
+      },
+      prompt = "Reboot",
+    },
+    {
+      args = {
+        "/shutdown1.lua",
+      },
+      prompt = "Shutdown",
+    },
+  },
+}

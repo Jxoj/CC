@@ -1,0 +1,4 @@
+{
+  [ "opus.boot_option" ] = 1,
+  [ "motd.path" ] = "/rom/motd.txt:/motd.txt:/rom/cccbridge_motd.txt",
+}
