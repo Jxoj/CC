@@ -4,7 +4,6 @@ local files = {
   { url = root.."/settings.txt", path = "/.settings" },
   { url = root.."/bootscreen.lua", path = "/bootscreen.lua" },
   { url = root.."/editstartupoptions.lua", path = "/editstartupoptions.lua" },
-  { url = root.."/installer.lua", path = "/installer.lua" },
   { url = root.."/nova.lua", path = "/nova.lua" },
   { url = root.."/reboot1.lua", path = "/reboot1.lua" },
   { url = root.."/repairbootr.lua", path = "/repairbootr.lua" },
