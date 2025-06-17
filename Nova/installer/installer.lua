@@ -1,7 +1,7 @@
 -- Auto-generated Nova installer
 local root = "https://jxoj.github.io/CC/Nova/installer_files"
 local files = {
-  { url = root.."/.settings", path = "/.settings" },
+  { url = root.."/settings.txt", path = "/.settings" },
   { url = root.."/bootscreen.lua", path = "/bootscreen.lua" },
   { url = root.."/editstartupoptions.lua", path = "/editstartupoptions.lua" },
   { url = root.."/installer.lua", path = "/installer.lua" },
