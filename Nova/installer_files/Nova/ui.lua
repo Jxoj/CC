@@ -22,7 +22,7 @@ end
 -- @param label string: Button text (including its own brackets)
 function ui.taskButton(x, y, label)
   term.setCursorPos(x, y)
-  term.setBackgroundColor(colors.darkGray)
+  term.setBackgroundColor(colors.gray)    -- was colors.darkGray (nil)
   term.setTextColor(colors.white)
   write(label)
   -- restore taskbar background

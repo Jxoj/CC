@@ -1,5 +1,5 @@
 -- /nova/install.lua
-local INDEX = "https://jxoj.github.io/CC/Nova/packages.json"
+local INDEX = "https://jxoj.github.io/CC/Nova/apps/packages.json"
 if not http then
   print("Error: HTTP API disabled")
   return
