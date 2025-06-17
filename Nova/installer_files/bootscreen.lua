@@ -36,6 +36,7 @@ local function loadBootOptions()
 				{ prompt = 'Edit Boot Options'         , args = { '/editstartupoptions.lua' } },
                 { prompt = 'Reboot'         , args = { '/reboot1.lua' } },
                 { prompt = 'Shutdown'         , args = { '/shutdown1.lua' } },
+				{ prompt = 'Nova Desktop'         , args = { '/nova.lua' } },
 			},
 		}))
 		f.close()
