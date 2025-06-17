@@ -1,38 +1,25 @@
 -- /nova/install.lua
 local INDEX = "https://jxoj.github.io/CC/Nova/apps/packages.json"
-if not http then
-  print("Error: HTTP API disabled")
-  return
-end
+assert(http, "HTTP API disabled")
 
--- ensure packages folder
 if not fs.exists("/nova/packages") then fs.makeDir("/nova/packages") end
 
 local function fetchIndex()
-  local res = http.get(INDEX)
-  if not res then error("Failed to fetch index") end
-  local txt = res.readAll(); res.close()
-  return textutils.unserializeJSON(txt) or {}
-end
-
-local function install(name)
-  local idx = fetchIndex()
-  local pkg = idx[name]
-  if not pkg then
-    print("No such package: "..name); return
-  end
-  print("Downloading "..name.."...")
-  local r = http.get(pkg.url)
-  if not r then error("Failed to download "..pkg.url) end
-  local data = r.readAll(); r.close()
-  local path = "/nova/packages/"..name..".lua"
-  local f = fs.open(path, "w"); f.write(data); f.close()
-  print("Installed to "..path)
+  local r = http.get(INDEX); assert(r, "Failed to fetch index")
+  local data = textutils.unserializeJSON(r.readAll()); r.close()
+  return data
 end
 
 local args = {...}
 if args[1]=="install" and args[2] then
-  install(args[2])
+  local idx = fetchIndex()
+  local pkg = idx[args[2]]
+  if not pkg then return print("No such pkg: "..args[2]) end
+  print("Installing "..args[2].."...")
+  local r = http.get(pkg.url); assert(r, "Download failed")
+  local f = fs.open("/nova/packages/"..args[2]..".lua","w")
+  f.write(r.readAll()); f.close(); r.close()
+  print("Done.")
 else
-  print("Usage: nova install <package>")
+  print("Usage: install <pkg>")
 end

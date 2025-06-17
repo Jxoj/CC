@@ -7,6 +7,7 @@ local files = {
   { url = root.."/Nova/core.lua",        path = "/nova/core.lua" },
   { url = root.."/Nova/ui.lua",          path = "/nova/ui.lua"   },
   { url = root.."/Nova/install.lua",     path = "/nova/install.lua" },
+  { url = root.."/Nova/default_packages/appstore.lua",     path = "/nova/packages/AppStore.lua" },
 }
 
 -- ensure HTTP API is available
